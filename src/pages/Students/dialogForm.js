@@ -27,8 +27,8 @@ export default function FormDialog(props) {
     props.setOpen(false);
   };
 
-  const handleEditCompany = () => {
-    Axios.put("http://localhost:3001/empresas/editar", {
+  const handleEditStudent = () => {
+    Axios.put("http://localhost:3001/estudantes/editar", {
       id: editValues.id,
       name: editValues.name,
       email: editValues.email,
@@ -52,8 +52,10 @@ export default function FormDialog(props) {
     handleClose();
   };
 
-  const handleDeleteCompany = () => {
-    Axios.delete(`http://localhost:3001/delete/${editValues.id}`).then(() => {
+  const handleDeleteStudent = () => {
+    Axios.delete(
+      `http://localhost:3001/estudantes/delete/${editValues.id}`
+    ).then(() => {
       props.setListCard(
         props.listCard.filter((value) => {
           return value.id !== editValues.id;
@@ -85,7 +87,7 @@ export default function FormDialog(props) {
             autoFocus
             margin="dense"
             id="name"
-            label="Nome da empresa"
+            label="Nome"
             defaultValue={props.title}
             type="text"
             onChange={handleChangeValues}
@@ -95,7 +97,7 @@ export default function FormDialog(props) {
             autoFocus
             margin="dense"
             id="email"
-            label="Email da empresa"
+            label="Email"
             defaultValue={props.email}
             type="text"
             onChange={handleChangeValues}
@@ -126,10 +128,10 @@ export default function FormDialog(props) {
           <Button onClick={handleClose} color="primary">
             Cancelar
           </Button>
-          <Button color="primary" onClick={() => handleDeleteCompany()}>
+          <Button color="primary" onClick={() => handleDeleteStudent()}>
             Excluir
           </Button>
-          <Button color="primary" onClick={() => handleEditCompany()}>
+          <Button color="primary" onClick={() => handleEditStudent()}>
             Salvar
           </Button>
         </DialogActions>

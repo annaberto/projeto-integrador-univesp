@@ -1,10 +1,13 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login/Login";
-import Cadastro from "./pages/Cadastro/Cadastro";
+import StudentRegistration from "./pages/Registration/StudentRegistration";
+import CompanyRegistration from "./pages/Registration/CompanyRegistration";
 import JobForm from "./pages/Job/JobForm";
 import Home from "./pages/Home/Home";
 import Companies from "./pages/Companies/Companies";
+import JobList from "./pages/Job/JobList";
+import Student from "./pages/Students/Student";
 
 function App() {
   return (
@@ -13,11 +16,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/cadastro" element={<Cadastro />} />
+          <Route path="/cadastro" element={<StudentRegistration />} />
+          <Route path="/cadastro-empresa" element={<CompanyRegistration />} />
           <Route path="/cadastrar-vaga" element={<JobForm />} />
-          <Route path="/vagas-cadastradas" element={<JobForm />} />
+          <Route path="/vagas-cadastradas" element={<JobList />} />
           <Route path="/empresas" element={<Companies />} />
-          <Route path="/estudantes" element={<Companies />} />
+          <Route path="/estudantes" element={<Student />} />
         </Routes>
       </Router>
     </div>

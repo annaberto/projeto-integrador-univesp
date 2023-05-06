@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./JobForm.css";
 import Axios from "axios";
 import CardJob from "./CardJob";
+import Header from "../../components/Header";
 
-export default function App() {
+const JobForm = () => {
   const [values, setValues] = useState();
   const [listCard, setListCard] = useState([]);
   console.log(listCard);
@@ -33,7 +34,7 @@ export default function App() {
   };
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/vagas-cadastradas").then((response) => {
+    Axios.get("http://localhost:3001/cadastrar-vaga").then((response) => {
       setListCard(response.data);
     });
   }, []);
@@ -47,6 +48,9 @@ export default function App() {
 
   return (
     <div className="app-container">
+      <div>
+        <Header />
+      </div>
       <div className="register-container">
         <h1 className="register-title">Cadastrar vaga de emprego</h1>
 
@@ -76,19 +80,19 @@ export default function App() {
           Cadastrar
         </button>
       </div>
-      <div>
-        {listCard.map((val) => (
-          <CardJob
-            listCard={listCard}
-            setListCard={setListCard}
-            key={val.id}
-            id={val.id}
-            name={val.name}
-            status={val.status}
-            description={val.description}
-          />
-        ))}
-      </div>
+
+      {listCard.map((val) => (
+        <CardJob
+          listCard={listCard}
+          setListCard={setListCard}
+          key={val.id}
+          id={val.id}
+          name={val.name}
+          status={val.status}
+          description={val.description}
+        />
+      ))}
     </div>
   );
-}
+};
+export default JobForm;

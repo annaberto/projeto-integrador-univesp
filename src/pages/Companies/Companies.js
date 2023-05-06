@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import CardCompany from "./CardCompany";
+import Header from "../../components/Header";
 
 const Companies = () => {
   const [empresas, setEmpresas] = useState([]);
@@ -41,28 +42,28 @@ const Companies = () => {
     });
   }, []);
 
-  const handleaddValues = (value) => {
-    setValues((prevValues) => ({
-      ...prevValues,
-      [value.target.name]: value.target.value,
-    }));
-  };
-
   return (
     <div className="container">
-      <h1>Empresas cadastradas</h1>
-      <ul>
-        {listCard.map((val) => (
-          <CardCompany
-            listCard={listCard}
-            setListCard={setListCard}
-            key={val.id}
-            id={val.id}
-            name={val.name}
-            email={val.email}
-          />
-        ))}
-      </ul>
+      <div>
+        <Header />
+      </div>
+      <div>
+        <h1>Empresas cadastradas</h1>
+        <ul>
+          {listCard.map((val) => (
+            <CardCompany
+              listCard={listCard}
+              setListCard={setListCard}
+              key={val.id}
+              id={val.id}
+              name={val.name}
+              email={val.email}
+              city={val.city}
+              telephone={val.telephone}
+            />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

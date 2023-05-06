@@ -2,7 +2,7 @@ import React from "react";
 // import "./CardJob.css";
 import FormDialog from "./dialogForm";
 
-export default function CardCompany(props) {
+const CardStudent = (props) => {
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -24,4 +24,5 @@ export default function CardCompany(props) {
       </div>
     </>
   );
-}
+};
+export default CardStudent;

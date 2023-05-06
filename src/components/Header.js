@@ -40,12 +40,12 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link to="/vagas" style={linkStyle}>
+            <Link to="/vagas-cadastradas" style={linkStyle}>
               Vagas de emprego
             </Link>
           </li>
           <li>
-            <Link to="/cadastrar" style={linkStyle}>
+            <Link to="/cadastrar-vaga" style={linkStyle}>
               Cadastrar vaga de emprego
             </Link>
           </li>

@@ -1,19 +1,39 @@
 import React from "react";
 import { ErrorMessage, Formik, Form, Field } from "formik";
-import { handleRegister } from "../utils";
+import { handleRegisterCompany } from "../utils";
 import { validationsRegister } from "../utils";
 import { Link } from "react-router-dom";
 
-const Cadastro = () => {
+const CompanyRegistration = () => {
   return (
     <div className="container">
-      <h1>Cadastro</h1>
+      <h1>Cadastro de Empresas </h1>
       <Formik
         initialValues={{}}
-        onSubmit={handleRegister}
+        onSubmit={handleRegisterCompany}
         validationSchema={validationsRegister}
       >
         <Form className="register-form">
+          <div>
+            <Field name="name" className="form-field" placeholder="Nome" />
+            <ErrorMessage component="span" name="name" className="form-error" />
+          </div>
+          <div>
+            <Field name="city" className="form-field" placeholder="Cidade" />
+            <ErrorMessage component="span" name="city" className="form-error" />
+          </div>{" "}
+          <div>
+            <Field
+              name="telephone"
+              className="form-field"
+              placeholder="Telefone"
+            />
+            <ErrorMessage
+              component="span"
+              name="telephone"
+              className="form-error"
+            />
+          </div>
           <div className="register-form-group">
             <Field name="email" className="form-field" placeholder="Email" />
 
@@ -23,7 +43,6 @@ const Cadastro = () => {
               className="form-error"
             />
           </div>
-
           <div className="form-group">
             <Field name="password" className="form-field" placeholder="Senha" />
 
@@ -33,7 +52,6 @@ const Cadastro = () => {
               className="form-error"
             />
           </div>
-
           <div className="form-group">
             <Field
               name="confirmation"
@@ -47,13 +65,12 @@ const Cadastro = () => {
               className="form-error"
             />
           </div>
-
           <button className="button" type="submit">
             Cadastrar
           </button>
           <div>
-            <span> Já tem uma conta? Faça login </span>
-            <Link to="/login"> Cadastra-se </Link>
+            <span> Já tem uma conta? </span>
+            <Link to="/login"> Faça login </Link>
           </div>
         </Form>
       </Formik>
@@ -61,4 +78,4 @@ const Cadastro = () => {
   );
 };
 
-export default Cadastro;
+export default CompanyRegistration;
