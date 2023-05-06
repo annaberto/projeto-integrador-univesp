@@ -3,33 +3,34 @@ import { ErrorMessage, Formik, Form, Field } from "formik";
 import { handleRegister } from "../utils";
 import { validationsRegister } from "../utils";
 import { Link } from "react-router-dom";
-import "./student-registration.css";
-import registrationImage from "../../assets/img/registrationImage.svg";
+import "../../assets/styles/forms.css";
+import studentRegistrationImage from "../../assets/img/studentRegistrationImage.svg";
 
 const StudentRegistration = () => {
   return (
     <div className="container">
-      <div className="login-form-image">
-        <img src={registrationImage}></img>
+      <div className="form-image">
+        <img src={studentRegistrationImage}></img>
       </div>
-      <div className="login-form-group">
+      <div className="form-container">
         <div className="form-header-title">
           <h1>Cadastro de estudantes </h1>
         </div>
+
         <div className="inputs-form">
           <Formik
             initialValues={{}}
             onSubmit={handleRegister}
             validationSchema={validationsRegister}
           >
-            <Form className="login-form">
+            <Form className="form-elements">
               <div>
                 <label htmlFor="email" className="form-label">
                   Insira seu nome
                 </label>
                 <Field name="name" className="form-field" placeholder="Nome" />
               </div>
-              <div className="register-form-group">
+              <div>
                 <label htmlFor="email" className="form-label">
                   Insira seu email
                 </label>
@@ -45,7 +46,7 @@ const StudentRegistration = () => {
                   className="form-error"
                 />
               </div>
-              <div className="form-group">
+              <div>
                 <label htmlFor="email" className="form-label">
                   Insira sua senha
                 </label>
@@ -62,7 +63,7 @@ const StudentRegistration = () => {
                 />
               </div>
 
-              <div className="form-group">
+              <div>
                 <label htmlFor="email" className="form-label">
                   confirme sua senha
                 </label>
@@ -78,7 +79,7 @@ const StudentRegistration = () => {
                   className="form-error"
                 />
               </div>
-              <div className="login-button">
+              <div className="submit-button">
                 <button className="button" type="submit">
                   <Link to="/login"> Cadastrar </Link>
                 </button>

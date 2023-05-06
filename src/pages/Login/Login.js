@@ -1,16 +1,16 @@
 import { ErrorMessage, Formik, Form, Field } from "formik";
 import { validationsLogin, handleLogin } from "../utils";
 import { Link } from "react-router-dom";
-import "./login.css";
+import "../../assets/styles/forms.css";
 import loginImagem from "../../assets/img/loginImagem.svg";
 
 const Login = () => {
   return (
     <div className="container">
-      <div className="login-form-image">
+      <div className="form-image">
         <img src={loginImagem}></img>
       </div>
-      <div className="login-form-group">
+      <div className="form-container">
         <div className="form-header-title">
           <h1>Login</h1>{" "}
         </div>
@@ -20,7 +20,7 @@ const Login = () => {
             onSubmit={handleLogin}
             validationSchema={validationsLogin}
           >
-            <Form className="login-form">
+            <Form className="form-elements">
               <div>
                 <div>
                   <label htmlFor="email" className="form-label">
@@ -54,7 +54,7 @@ const Login = () => {
                   />
                 </div>
               </div>
-              <div className="login-button">
+              <div className="submit-button">
                 <button type="submit">
                   <Link to="/"> Login </Link>
                 </button>
