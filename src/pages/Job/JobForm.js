@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./JobForm.css";
+import "../../assets/styles/job-form.css";
 import Axios from "axios";
 import CardJob from "./CardJob";
 import Header from "../../components/Header";
@@ -23,7 +23,7 @@ const JobForm = () => {
         setListCard([
           ...listCard,
           {
-            id: response.data[0].id,
+            id: response.data[0]?.id,
             name: values.name,
             status: values.status,
             description: values.description,
@@ -52,46 +52,57 @@ const JobForm = () => {
         <Header />
       </div>
       <div className="register-container">
-        <h1 className="register-title">Cadastrar vaga de emprego</h1>
+        <div className="section-title">
+          <h1>Cadastrar vaga de emprego</h1>
+        </div>
+        <div>
+          <input
+            type="text"
+            name="name"
+            placeholder="Nome da empresa"
+            className="register-input"
+            onChange={handleaddValues}
+          />
+        </div>
 
-        <input
-          type="text"
-          name="name"
-          placeholder="Nome da empresa"
-          className="register-input"
-          onChange={handleaddValues}
-        />
-        <input
-          type="text"
-          placeholder="Status da vaga"
-          name="status"
-          className="register-input"
-          onChange={handleaddValues}
-        />
-        <textarea
-          type="text"
-          placeholder="Descriçao da vaga"
-          name="description"
-          className="register-input"
-          onChange={handleaddValues}
-        />
+        <div>
+          <input
+            type="text"
+            placeholder="Status da vaga"
+            name="status"
+            className="register-input"
+            onChange={handleaddValues}
+          />
+        </div>
 
-        <button onClick={handleRegisterJob} className="register-button">
-          Cadastrar
-        </button>
+        <div>
+          <textarea
+            type="text"
+            placeholder="Descriçao da vaga"
+            name="description"
+            className="register-input-textarea"
+            onChange={handleaddValues}
+          />
+        </div>
+        <div className="submit-button">
+          <button onClick={handleRegisterJob} className="register-button">
+            Cadastrar
+          </button>
+        </div>
       </div>
-
-      {listCard.map((val) => (
-        <CardJob
-          listCard={listCard}
-          setListCard={setListCard}
-          key={val.id}
-          id={val.id}
-          name={val.name}
-          status={val.status}
-          description={val.description}
-        />
-      ))}
+      <div className="list-cards">
+        {listCard.map((val) => (
+          <CardJob
+            listCard={listCard}
+            setListCard={setListCard}
+            key={val.id}
+            id={val.id}
+            name={val.name}
+            status={val.status}
+            description={val.description}
+          />
+        ))}
+      </div>
     </div>
   );
 };

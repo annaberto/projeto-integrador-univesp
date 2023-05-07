@@ -5,9 +5,9 @@ import StudentRegistration from "./pages/Registration/StudentRegistration";
 import CompanyRegistration from "./pages/Registration/CompanyRegistration";
 import JobForm from "./pages/Job/JobForm";
 import Home from "./pages/Home/Home";
-import Companies from "./pages/Companies/Companies";
+import Companies from "./pages/Companies/CompaniesList";
 import JobList from "./pages/Job/JobList";
-import Student from "./pages/Students/Student";
+import Student from "./pages/Students/StudentList";
 
 function App() {
   return (

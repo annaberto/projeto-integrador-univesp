@@ -1,5 +1,5 @@
 import React from "react";
-import "./CardJob.css";
+import "../../assets/styles/cards.css";
 import FormDialog from "./dialogForm";
 
 export default function Card(props) {
@@ -20,11 +20,13 @@ export default function Card(props) {
       <div className="card-container" onClick={() => setOpen(true)}>
         <h1 className="card-title">{props.name}</h1>
         <p className="card-id">{props.id}</p>
-        <p className="card-cartegory">
+        <p className="card-content">
           Descrição da vaga de emprego:
           {props.description}
         </p>
-        <h3 className="card-cost">Status: {props.status}</h3>
+        <div className="card-status">
+          <p>Status: {props.status}</p>
+        </div>
       </div>
     </>
   );

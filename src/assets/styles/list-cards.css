@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.list-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 5px;
+}
+.list-container-a {
+  margin-right: 50px;
+  display: flex;
+  justify-content: center;
+  margin-left: 300px;
+}
+.cards-container {
+  padding: 40px;
+  margin-top: 40px;
+  border-radius: 5px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-family: "Roboto";
+}
+
+.list-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  max-width: 300px;
+  margin: 10px;
+}

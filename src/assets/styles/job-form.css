@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 35px;
+}
+
+.register-container {
+  margin-top: 40px;
+  border: 3px solid black;
+  border-radius: 5px;
+  padding: 40px;
+  margin-top: 40px;
+  margin-left: 300px;
+  border-radius: 5px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.section-title h1 {
+  font-family: "Roboto";
+}
+
+.register-input {
+  display: block;
+  margin: 10px auto;
+  padding: 7px 0;
+}
+.submit-button {
+  align-items: center;
+}
+.submit-button button {
+  width: 10rem;
+  height: 3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  border: none;
+  background-color: #281de4;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button button:hover {
+  background-color: #6b63fff1;
+}
+
+.submit-button button a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #fff;
+}
+.submit-button {
+  display: flex;
+  justify-content: center;
+}
+
+.list-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.register-input {
+  width: 20rem;
+  height: 3rem;
+  margin-bottom: 20px;
+}
+.register-input-textarea {
+  margin-top: 12px;
+  margin-left: 84px;
+  width: 20rem;
+  height: 10rem;
+}

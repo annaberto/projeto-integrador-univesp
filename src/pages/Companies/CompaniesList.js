@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import CardCompany from "./CardCompany";
 import Header from "../../components/Header";
+import "../../assets/styles/list-cards.css";
 
-const Companies = () => {
+const CompaniesList = () => {
   const [empresas, setEmpresas] = useState([]);
   const [values, setValues] = useState();
   const [listCard, setListCard] = useState([]);
@@ -43,13 +44,15 @@ const Companies = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div className="list-container-a">
       <div>
         <Header />
       </div>
-      <div>
-        <h1>Empresas cadastradas</h1>
-        <ul>
+      <div className="cards-container">
+        <div className="section-title">
+          <h1>Estudantes cadastrados</h1>
+        </div>
+        <div className="list-cards">
           {listCard.map((val) => (
             <CardCompany
               listCard={listCard}
@@ -62,10 +65,10 @@ const Companies = () => {
               telephone={val.telephone}
             />
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Companies;
+export default CompaniesList;

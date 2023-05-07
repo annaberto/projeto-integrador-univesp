@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./JobForm.css";
+import "../../assets/styles/list-cards.css";
 import Axios from "axios";
 import CardJob from "./CardJob";
 import Header from "../../components/Header";
@@ -15,13 +15,15 @@ const JobList = () => {
   }, []);
 
   return (
-    <div className="app-container">
+    <div className="list-container">
       <div>
         <Header />
       </div>
-      <div className="register-container">
-        <h1 className="register-title">Vagadas de empregos disponíveis </h1>
-        <div>
+      <div className="cards-container">
+        <div className="section-title">
+          <h1>Vagas de empregos disponíveis </h1>
+        </div>
+        <div className="list-cards">
           {listCard.map((val) => (
             <CardJob
               listCard={listCard}
